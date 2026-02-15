@@ -7,7 +7,7 @@ comply with ethical and legal standards.
 
 import sys
 import os
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 # Add parent directory to path to import shrines
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
@@ -58,7 +58,7 @@ class EthicalGuard:
     ]
     
     @classmethod
-    def validate_action(cls, action: str, context: Dict) -> tuple[bool, str]:
+    def validate_action(cls, action: str, context: Dict) -> Tuple[bool, str]:
         """
         Validate if an action is ethical and legal.
         
