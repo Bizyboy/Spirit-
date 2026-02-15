@@ -1,0 +1,63 @@
+# Sourcer Configuration Template
+# Copy this file to config.json and customize for your needs
+
+{
+  "sourcer": {
+    "version": "0.1.0",
+    "ethical_mode": "strict",
+    "audit_logging": true
+  },
+  
+  "data_sources": {
+    "vulnerability_databases": {
+      "enabled": true,
+      "sources": [
+        "nvd",
+        "cve",
+        "security_advisories"
+      ],
+      "rate_limit_per_minute": 30
+    },
+    
+    "business_intelligence": {
+      "enabled": true,
+      "sources": [
+        "sec_edgar",
+        "business_registries"
+      ],
+      "rate_limit_per_minute": 10
+    },
+    
+    "osint": {
+      "enabled": true,
+      "sources": [
+        "whois",
+        "dns",
+        "public_repos"
+      ],
+      "rate_limit_per_minute": 20,
+      "respect_robots_txt": true
+    }
+  },
+  
+  "ethical_constraints": {
+    "require_purpose_statement": true,
+    "maintain_audit_trail": true,
+    "respect_privacy": true,
+    "public_sources_only": true,
+    "follow_shrine_virtues": true
+  },
+  
+  "output": {
+    "format": "json",
+    "include_sources": true,
+    "include_timestamps": true,
+    "include_ethical_validation": true
+  },
+  
+  "continuous_refinement": {
+    "enabled": true,
+    "auto_suggest_improvements": true,
+    "track_task_completion": true
+  }
+}
