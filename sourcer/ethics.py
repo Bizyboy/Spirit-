@@ -98,10 +98,13 @@ class EthicalGuard:
         return "Shrine guidance not available. Follow core ethical principles."
     
     @classmethod
-    def log_action(cls, action: str, result: str, ethical_check: bool):
+    def log_action(cls, action: str, result: bool, ethical_check: bool):
         """Log all actions for audit trail."""
         # In a production system, this would write to a secure audit log
-        print(f"[AUDIT] Action: {action} | Ethical: {ethical_check} | Result: {result}")
+        # For now, using print for demonstration purposes
+        status = "SUCCESS" if result else "FAILED"
+        ethical_status = "PASS" if ethical_check else "FAIL"
+        print(f"[AUDIT] Action: {action} | Ethical: {ethical_status} | Result: {status}")
     
     @classmethod
     def get_ethical_summary(cls) -> str:

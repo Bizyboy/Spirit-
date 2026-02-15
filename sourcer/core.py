@@ -159,7 +159,7 @@ class Sourcer:
         self.audit_log.append(entry)
         self.guard.log_action(
             str(query.get('purpose', 'unknown')),
-            str(results.get("success", False)),
+            results.get("success", False),
             ethical
         )
     
